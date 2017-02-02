@@ -1,0 +1,165 @@
+@import '../variables';
+
+home {
+  height: 100%;
+  position: relative;
+  display: block;
+  background: #fff;
+
+  .custom-bottom-btn {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    padding-bottom: 122px;
+
+    .custom-bottom-btn {
+      display: block;
+      position: absolute;
+      z-index: 100;
+      bottom: 0;
+      width: 100%;
+      border-top: 3px solid $elementcolor;
+      padding: 0 23px;
+
+      .btn {
+        font-family: 'Big Header Font';
+        margin: 36px 0 37px 0;
+        background-color: $elementcolor;
+        border-color: $elementcolor;
+        outline: none;
+        border-radius: 25px;
+        width: 100%;
+
+        &:hover,
+        &:focus {
+          background-color: $elementcolor;
+          border-color: $elementcolor;
+        }
+      }
+    }
+  }
+
+  .jumbo {
+    position: relative;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Big Header Font';
+    background-color: #fff;
+    background-image: url('assets/img/homebg_small.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-width: 768px) {
+      background-image: url('assets/img/homebg_big.jpg');
+    }
+
+    .shadow-layer {
+      background-color: rgba(#000, 0.4);
+      transition: background-color 1s linear 0s;
+      height: 100%;
+
+      @media (min-width: 768px) {
+        background-color: rgba(#000, 0.3);
+        transition: background-color 1s linear 0s;
+      }
+
+      .container {
+        padding: 0 34px;
+        color: #fff;
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        @media (min-width: 768px) {
+          padding: 0 10px;
+        }
+
+        h1 {
+          line-height: 1.2;
+          margin: 0 0 5px 0;
+          width: 410px;
+
+          @media (min-width: 768px) {
+            line-height: 1.18;
+            font-size: 44px;
+            margin: 63px 0 24px 0;
+            width: 496px;
+          }
+        }
+
+        p {
+          font-size: 10px;
+          font-family: 'Menu Items';
+
+          @media (min-width: 768px) {
+            font-size: 11px;
+          }
+
+          strong {
+            font-family: 'Jumbotron Note';
+          }
+
+          .icon {
+            position: relative;
+            display: inline-block;
+            border: 1px solid rgba(#fff, 0.7);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            top: 7px;
+            margin-right: 8px;
+
+            @media (min-width: 768px) {
+              width: 21px;
+              height: 21px;
+              top: 6px;
+            }
+
+            &:before {
+              position: relative;
+              top: -4px;
+              font-size: 22px;
+
+              @media (min-width: 768px) {
+                font-size: 23px;
+              }
+            }
+          }
+        }
+      }
+
+      .bottom-btn {
+        width: 100%;
+        background-color: rgba(#fff, 0.8);
+        position: absolute;
+        padding: 12px 10px;
+        bottom: 0;
+
+        @media (min-width: 768px) {
+          display: none;
+        }
+
+        .btn {
+          font-family: 'Big Header Font';
+          width: 100%;
+          border-radius: 25px;
+          font-size: 19px;
+          padding: 10px;
+          border: 0;
+          outline: none;
+          background-color: $elementcolor;
+
+          .icon {
+            margin-right: 10px;
+            font-size: 21px;
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,208 @@
+@import '../variables';
+
+slide-menu {
+  display: block;
+  position: fixed;
+  z-index: 99999;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(#000, 0);
+  top: 0;
+  left: 100%;
+  bottom: 0;
+  transition: left 0s linear 0.2s, background-color 0.2s linear 0s;
+
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  .menu-opened & {
+    left: 0%;
+    background-color: rgba(#000, 0.5);
+    transition: background-color 0.2s linear 0.2s, left 0s linear 0s;
+  }
+
+  .menu-holder, .menu-second-holder {
+    position: absolute;
+    z-index: 0;
+    width: 88%;
+    height: 100%;
+    background-color: #eaeaea;
+    left: 100%;
+    transform: translate(0, 0);
+    transition: transform 0.2s linear 0s;
+
+    .menu-header {
+      font-family: 'Menu Header';
+      background-color: #fff;
+      white-space: nowrap;
+      font-size: 20px;
+      min-height: 51px;
+      text-align: center;
+      color: $textcolor;
+      padding: 5px 0 4px 0;
+      line-height: 40px;
+      border-bottom: 1px solid rgba(#c8c8c8, 0.6);
+
+      a {
+        color: $elementcolor;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: $elementcolor;
+        }
+
+        .icon {
+          left: 0;
+          position: absolute;
+          color: $elementcolor;
+          line-height: 1;
+          font-size: 40px;
+          margin: 0 0 0 17px;
+        }
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 22px 0 0 0;
+      padding-left: 0;
+      padding-right: 0;
+      background-color: #fff;
+
+      li {
+        &:first-of-type a {
+          border-top: 0;
+        }
+
+        .icon {
+          left: 0;
+          position: absolute;
+          color: $elementcolor;
+          line-height: 1;
+          font-size: 27px;
+          margin: 24px 0 25px 28px;
+        }
+
+        a {
+          font-family: 'Menu Items';
+          font-size: 16px;
+          padding: 27px 30px 28px 0;
+          margin-left: 72px;
+          color: $textcolor;
+          text-decoration: none;
+          display: block;
+          border-top: 1px solid rgba(#c8c8c8, 0.5);
+
+          strong {
+            font-family: 'Menu Items Strong';
+          }
+
+          &:hover,
+          &:focus {
+            color: $textcolor;
+            text-decoration: none;
+          }
+
+          .icon {
+            right: 0;
+            left: auto;
+            position: absolute;
+            color: #c8c8c8;
+            line-height: 1;
+            font-size: 17px;
+            margin: 2px 17px 2px 0;
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    .bottom-btn-set {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 0 8px;
+
+      &:before,
+      &:after {
+        display: table;
+        content: " ";
+      }
+
+      &:after {
+        clear: both;
+      }
+
+      .btns-holder {
+        padding: 10px 0;
+        width: 100%;
+        border-top: 1px solid rgba(#c8c8c8, 0.5);
+        white-space: nowrap;
+
+        .btn-holder {
+          float: left;
+          width: 50%;
+          padding-left: 5px;
+          
+          &:first-of-type {
+            padding-right: 5px;
+            padding-left: 0;
+          }
+
+          .btn {
+            border-radius: 25px;
+            font-family: 'Big Header Font';
+            padding: 12px 0;
+            font-size: 19px;
+            width: 100%;
+          }
+
+          .btn-default {
+            background-color: transparent;
+          }
+
+          .btn-primary {
+            background-color: $elementcolor;
+            border-color: $elementcolor;
+          }
+        }
+      }
+    }
+  }
+
+  .menu-holder {
+    .menu-opened & {
+      transform: translate(-100%, 0);
+      transition: transform 0.2s linear 0s;
+    }
+  }
+
+  .menu-second-holder {
+    z-index: 1;
+
+    ul li a {
+      font-size: 16px;
+      line-height: 1;
+      color: $textcolor;
+      padding: 18px 0;
+      margin: 0 0 0 20px;
+    }
+  }
+
+  &.second-opened .menu-second-holder {
+    transform: translate(-100%, 0);
+    transition: transform 0.2s linear 0s;
+  }
+}

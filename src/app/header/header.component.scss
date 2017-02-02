@@ -1,0 +1,119 @@
+@import '../variables';
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 50px;
+  z-index: 9999;
+
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .navbar {
+    margin-bottom: 0;
+
+    @media (min-width: 768px) {
+      & > .container-fluid .navbar-brand {
+        margin: 10px 15px 10px 0;
+      }
+    }
+  }
+
+  .navbar-default {
+    background-color: #fff;
+    transition: background-color 1s linear 0s;
+    border: 0;
+
+    @media (min-width: 768px) {
+      background-color: transparent;
+      transition: background-color 1s linear 0s;
+    }
+
+    .navbar-nav {
+      &,
+      & > li > a {
+        color: #fff;
+        font-family: 'Big Header Font';
+        font-size: 11px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 20px;
+        margin-right: 0; 
+
+        &:hover,
+        &:focus {
+          color: #fff;
+        }
+
+        .icon {
+          font-size: 16px;
+          display: inline-block;
+          position: relative;
+          top: 2px;
+          margin: 0 5px;
+        }
+
+        &.btn-default {
+          background-color: transparent;
+          border-radius: 13px;
+          border: 1px solid rgba(#fff, 0.9);
+          padding: 3px 22px;
+          margin: 11px 10px 11px 15px;
+        }
+      }
+    }
+
+    .navbar-brand {
+      display: inline-block;
+      height: 27px;
+      width: 107px;
+      background-image: url('assets/img/plugnplaylogo_small.png');
+      background-image: linear-gradient(transparent, transparent), url('assets/img/plugnplaylogo_green.svg');
+      transition: background-image 1s linear 0s;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 10px 15px;
+      padding: 0;
+
+      @media (min-width: 768px) {
+        background-image: url('assets/img/plugnplaylogo_small_white.png');
+        background-image: linear-gradient(transparent, transparent), url('assets/img/plugnplaylogo_white.svg');
+        transition: background-image 1s linear 0s;
+      }
+    }
+
+    .navbar-toggle {
+      border: 0;
+      border-radius: 0;
+      background-color: transparent;
+      padding: 0;
+      margin-top: 9px;
+      margin-bottom: 8px;
+      line-height: 1;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+
+      .ion-ios-more {
+        font-size: 32px;
+        color: $textcolor;
+
+        &:before {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}

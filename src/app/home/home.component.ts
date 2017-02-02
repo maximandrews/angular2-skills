@@ -1,7 +1,4 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { AppState } from '../app.service';
 import { Title } from './title';
@@ -17,9 +14,10 @@ import { XLargeDirective } from './x-large';
     Title
   ],
   // Our list of styles in our component. We may add more to compose many styles together
-  styleUrls: [ './home.component.css' ],
+  styleUrls: [ './home.component.scss' ],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
   // Set our default values
@@ -31,12 +29,10 @@ export class HomeComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    console.log('hello `Home` component');
     // this.title.getData().subscribe(data => this.data = data);
   }
 
   public submitState(value: string) {
-    console.log('submitState', value);
     this.appState.set('value', value);
     this.localState.value = '';
   }

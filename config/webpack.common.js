@@ -26,7 +26,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Plug & Play',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
@@ -75,7 +75,7 @@ module.exports = function (options) {
        *
        * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
        */
-      extensions: ['.ts', '.js', '.json'],
+      extensions: ['.ts', '.js', '.json', '.scss', '.css'],
 
       // An array of directory names to be resolved to the current directory
       modules: [helpers.root('src'), helpers.root('node_modules')],
@@ -127,6 +127,12 @@ module.exports = function (options) {
         {
           test: /\.css$/,
           use: ['to-string-loader', 'css-loader']
+        },
+
+        {
+          test: /\.scss$/,
+          exclude: /node_modules/,
+          use: ['raw-loader', 'sass-loader'] // sass-loader not scss-loader
         },
 
         /* Raw loader support for *.html

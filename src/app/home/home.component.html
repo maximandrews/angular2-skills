@@ -1,37 +1,10 @@
-<div class="card-container">
-  <h1 x-large class="sample-content">Your Content Here</h1>
-
-  <hr>
-
-  <div>
-    For hot module reloading run
-    <pre>npm run start:hmr</pre>
+<div class="jumbotron jumbo">
+  <div class="shadow-layer">
+    <div class="container">
+      <h1>Managing your health has never been easier.</h1>
+      <p><i class="icon ion-ios-arrow-thin-down"></i> <strong>Search</strong>, <strong>Compare</strong> and <strong>Book</strong> a healthcare specialist.</p>
+    </div>
+    <div class="bottom-btn"><a class="btn btn-primary btn-lg" href="#" role="button"><i class="icon ion-ios-search"></i> Find a Specialist</a></div>
   </div>
-
-  <hr>
-
-  <div>
-    <h4>Local State</h4>
-
-    <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
-
-      <input
-        [value]="localState.value"
-        (input)="localState.value = $event.target.value"
-        placeholder="Submit Local State to App State"
-        autofocus>
-
-      <button md-raised-button color="primary">Submit Value</button>
-    </form>
-    <!--
-        <input type="text" [value]="localState.value" (input)="localState.value = $event.target.value" autofocus>
-        Rather than wiring up two-way data-binding ourselves with [value] and (input)
-        we can use Angular's [(ngModel)] syntax
-        <input type="text" name="textInput" [(ngModel)]="localState.value" autofocus>
-      -->
-
-    <pre>this.localState = {{ localState | json }}</pre>
-
-  </div>
-
 </div>
+<div class="custom-bottom-btn"><a class="btn btn-primary btn-lg" href="#" role="button"><i class="icon ion-ios-search"></i> Find a Specialist</a></div>
